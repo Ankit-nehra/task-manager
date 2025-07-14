@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Task Manager</h1>
+
+    <!-- Add Task Form -->
+    <form id="task-form" class="form">
+      <input type="text" id="title" placeholder="Task title" required />
+      <input type="text" id="description" placeholder="Task description" required />
+      <button type="submit" class="btn primary">➕ Add Task</button>
+    </form>
+
+    <!-- Search Form -->
+    <form id="search-form" class="form">
+      <input type="text" id="search-title" placeholder="🔍 Search by title" />
+      <div class="btn-group">
+        <button type="submit" class="btn">Search</button>
+        <button type="button" onclick="loadTasks()" class="btn">Reset</button>
+      </div>
+    </form>
+
+    <!-- Edit Task Form -->
+    <form id="edit-form" class="form" style="display: none;">
+      <input type="text" id="edit-title" placeholder="Edit Title" required />
+      <input type="text" id="edit-description" placeholder="Edit Description" required />
+      <label class="checkbox-label">
+        <input type="checkbox" id="edit-completed" />
+        <span>Completed</span>
+      </label>
+      <div class="btn-group">
+        <button type="submit" class="btn primary">✅ Update</button>
+        <button type="button" onclick="cancelEdit()" class="btn danger">❌ Cancel</button>
+      </div>
+    </form>
+
+    <!-- Task List -->
+    <ul id="task-list" class="task-list"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
